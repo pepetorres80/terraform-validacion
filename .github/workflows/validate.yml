@@ -1,0 +1,23 @@
+name: Validación de Terraform
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform-validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonar repositorio
+      uses: actions/checkout@v3
+
+    - name: Instalar Terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: 1.6.3
+
+    - name: Validar configuración
+      run: terraform validate
+
