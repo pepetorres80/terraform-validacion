@@ -10,12 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Instalar Terraform
-      uses: hashicorp/setup-terraform@v3
-      with:
-        terraform_version: 1.6.3
+      - name: Instalar Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.3
 
-    - name: Validar configuración
-      run: terraform validate
+      - name: Inicializar Terraform
+        run: terraform init
+
+      - name: Validar configuración
+        run: terraform validate
