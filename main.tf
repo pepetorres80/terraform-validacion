@@ -23,4 +23,5 @@ provider "aws" {
 resource "aws_sqs_queue" "mi_cola" {
   name                      = "torres-queue"
   visibility_timeout_seconds = 45
+  receive_wait_time_seconds  = 10
 }
