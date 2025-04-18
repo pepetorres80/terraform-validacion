@@ -10,8 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Clonar repositorio
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
     - name: Instalar Terraform
       uses: hashicorp/setup-terraform@v3
@@ -20,4 +19,3 @@ jobs:
 
     - name: Validar configuración
       run: terraform validate
-
